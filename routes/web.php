@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,8 @@ return view('home');
 
 //route dengan mode resources
 Route::resource('/products', ProductController::class);
+
+Route::resource('/category', CategoryController::class);
 
 // Route::get('/', function () {
 //     return view('user.home');

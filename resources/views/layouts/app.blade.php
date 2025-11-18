@@ -5,48 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, userscalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 <title> CRUD | @yield('title')</title>
 <meta name="description" content="" />
+
+<!-- Favicons -->
 <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,5
-00;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+<!-- Styles -->
 <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/boxicons.css') }}" />
 <link rel="stylesheet" href="{{ asset('assets/vendor/css/core.css') }}" class="templatecustomizer-core-css" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}"
-class="template-customizer-theme-css" />
+<link rel="stylesheet" href="{{ asset('assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
 <link rel="stylesheet" href="{{ asset('assets/css/demo.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfectscrollbar.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css')
-}}" />
+<link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+<!-- Helpers & Config -->
 <script src="{{ asset('assets/vendor/js/helpers.js') }}"></script>
 <script src="{{ asset('assets/js/config.js') }}"></script>
+
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body>
 <div class="layout-wrapper layout-content-navbar">
-<div class="layout-container">
-@include('components.layout.sidebar')
-<div class="layout-page">
-@include('components.layout.navbar')
-<div class="content-wrapper">
-@yield('content')
-@include('components.layout.footer')
+    <div class="layout-container">
+
+        @include('components.layout.sidebar')
+
+        <div class="layout-page">
+            @include('components.layout.navbar')
+
+            <div class="content-wrapper">
+                @yield('content')
+                @include('components.layout.footer')
+            </div>
+        </div>
+
+    </div>
+
+    <div class="layout-overlay layout-menu-toggle"></div>
 </div>
-</div>
-</div>
-<div class="layout-overlay layout-menu-toggle"></div>
-</div>
+
+<!-- JS Vendors -->
 <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')
-}}"></script>
+<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
-<script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js')
-}}"></script>
+<script src="{{ asset('assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
 <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Stack Scripts -->
+@stack('scripts')
+
 </body>
 </html>
