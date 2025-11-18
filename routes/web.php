@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +22,13 @@ Route::middleware('auth')->group(function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'admin'])->name('dashboard');
+
+Route::get('/', function () {
+return view('home');
+})->name('home');
+
+//route dengan mode resources
+Route::resource('/products', ProductController::class);
 
 // Route::get('/', function () {
 //     return view('user.home');
