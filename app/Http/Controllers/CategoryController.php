@@ -11,12 +11,16 @@ class CategoryController extends Controller
    
     public function index(): View
     {
-        $categories = Category::when(request('search'), function($query) {
+        $categories = Category::when(request('search'), function ($query) {
             $query->where('nama', 'like', '%' . request('search') . '%');
-        })->paginate(10);
+        })
+        ->orderBy('id', 'DESC')
+        ->paginate(10)
+        ->appends(['search' => request('search')]);
 
         return view('category.index', compact('categories'));
     }
+
 
     public function create(): View
     {

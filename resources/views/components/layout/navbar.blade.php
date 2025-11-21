@@ -44,11 +44,14 @@
                         </a>
                     </li>
                     <li><div class="dropdown-divider"></div></li>
-                    <li>
-                        <a class="dropdown-item" href="auth-login-basic.html">
-                            <i class="bx bx-power-off me-2"></i>
-                            <span class="align-middle">Log Out</span>
-                        </a>
+                   <li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item" style="width: 100%; text-align: left;">
+                                <i class="bx bx-power-off me-2"></i>
+                                <span class="align-middle">Log Out</span>
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </li>

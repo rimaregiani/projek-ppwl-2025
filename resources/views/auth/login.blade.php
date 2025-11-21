@@ -65,5 +65,14 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        <!-- Link to Register -->
+        @if (Route::has('register'))
+            <div class="mt-4 text-center">
+                <a href="{{ route('register') }}" class="text-sm text-indigo-600 hover:text-indigo-900">
+                    {{ __("Don't have an account? Register") }}
+                </a>
+            </div>
+        @endif
     </form>
 </x-guest-layout>

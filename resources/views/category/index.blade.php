@@ -33,14 +33,18 @@
 
             {{-- Search Form --}}
             <form action="{{ route('category.index') }}" method="GET" class="d-flex" style="width: 300px;">
-                <input type="text" name="search"
-                       class="w-75 pr-10 border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 me-2"
-                       placeholder="Cari..."
-                       value="{{ request('search') }}">
+                <input 
+                    type="text" 
+                    name="search"
+                    class="form-control me-2"
+                    placeholder="Cari..."
+                    value="{{ request('search') }}"
+                >
                 <button class="btn btn-primary btn-sm" type="submit">
                     <i class="bx bx-search"></i>
                 </button>
             </form>
+
 
         </div>
 

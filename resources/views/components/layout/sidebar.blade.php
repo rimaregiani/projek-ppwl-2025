@@ -75,6 +75,13 @@
                     </a>
                 </li>
             </ul>
+            <ul class="menu-sub">
+                <li class="menu-item">
+                    <a href="{{ route('category.index')}}" class="menu-link">
+                        <div data-i18n="Basic">Kategori</div>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li class="menu-header small text-uppercase">

@@ -22,16 +22,25 @@ Route::middleware('auth')->group(function () {
 // Admin
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified', 'admin'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', function () {
-return view('home');
-})->name('home');
+    return view('home'); // atau bisa langsung redirect ke dashboard
+})->middleware('auth')->name('home');
+
 
 //route dengan mode resources
 Route::resource('/products', ProductController::class);
 
 Route::resource('/category', CategoryController::class);
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login');
+})->name('logout');
+
 
 // Route::get('/', function () {
 //     return view('user.home');
